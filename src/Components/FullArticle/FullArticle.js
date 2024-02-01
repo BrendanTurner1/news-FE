@@ -31,7 +31,8 @@ export default function FullArticle() {
             <h1>{article.title}</h1>
             <h2>By: {article.author}</h2>
             <h2>{article.publishedAt}</h2>
-            {article.urlToImage ? <img src={article.urlToImage} alt={article.title}></img> : <div>No Image Found</div>}
+            {article.urlToImage ? <img className="article-img"src={article.urlToImage} alt={article.title}></img> :
+            <img className="img-not-found" src={"https://media1.tenor.com/m/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif"} alt={article.title}></img>}
             <p>{article.content}</p>
         </div>
     )

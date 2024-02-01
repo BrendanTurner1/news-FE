@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Article from "../Article/Article";
 import newsCall from "../../APICalls/APICalls";
-import results from "../../MockData/MockData";
 
 export default function Home() {
     const [articles, setArticles] = useState([]);
     const [filter, setFilter] = useState("");
+
+
 
     const handleDropdownChange = (event) => {
         setFilter(event.target.value);
@@ -22,6 +23,14 @@ export default function Home() {
   
     }, [])
 
+    const source = useMemo(() => {
+        const Sources = new Set()
+        articles.map((article) => Sources.add(article.source.name))
+        const uniqueArray = [...Sources]
+        console.log(uniqueArray)
+        return uniqueArray
+    }, [articles]);
+
     return (
         <div>
             <h1>Top Articles</h1>
@@ -29,11 +38,11 @@ export default function Home() {
                 <label htmlFor="source-select">Select a Source: </label>
                 <select className='source-select' onChange={handleDropdownChange} defaultValue="">
                     <option value="" >All Sources</option>
-                    {articles.map((articles, index) => {
-                        if(articles.source.name==="[Removed]"){
+                    {source.map((source, index) => {
+                        if(source==="[Removed]"){
                             return
                         }
-                        return(<option id={articles.source.name} key={index} value={articles.source.name}>{articles.source.name}</option>)    
+                        return(<option id={source} key={index} value={source}>{source}</option>)    
                     })}
                 </select>
             </div>
