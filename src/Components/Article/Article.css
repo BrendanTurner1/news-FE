@@ -1,0 +1,26 @@
+.article-display {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 0px;
+}
+
+.article {
+    display: flex;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    background-color: black;
+}
+
+.article-img {
+    width: 100%;
+}
+
+.img-not-found {
+    width: 100%;
+}

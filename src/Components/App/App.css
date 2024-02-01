@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+header {
+  font-size: 100px;
+  background-color: rgb(17, 15, 21);
+  margin: none;
+  font-family: 'sacramento';
+  color: white;
+}
+
+body {
+  background-color: rgb(65, 153, 168); /* Set the background color for the entire app */
+  margin: 0;
+  padding: 0;
+  color: white; /* Set default text color to white */
+}
+
+.navLink {
+  text-decoration: none;
+  color: white;
+}
